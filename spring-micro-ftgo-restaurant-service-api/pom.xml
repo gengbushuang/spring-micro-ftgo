@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-micro-ftgo</artifactId>
+        <groupId>net.chrisrichardson.ftgo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-micro-ftgo-restaurant-service-api</artifactId>
+
+    <dependencies>
+        <!-- ftgo -->
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>spring-micro-ftgo-common</artifactId>
+        </dependency>
+
+        <!-- eventuate -->
+        <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-events</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

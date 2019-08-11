@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-micro-ftgo</artifactId>
+        <groupId>net.chrisrichardson.ftgo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-micro-ftgo-order-service</artifactId>
+
+    <properties>
+        <eventuate.tram.version>0.21.0.RELEASE</eventuate.tram.version>
+        <eventuate.tram.sagas.version>0.11.1.RELEASE</eventuate.tram.sagas.version>
+        <grpc.version>1.13.2</grpc.version>
+        <micrometer.version>1.0.4</micrometer.version>
+        <microservice.canvas.version>0.1.1.RELEASE</microservice.canvas.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>spring-micro-ftgo-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>spring-micro-ftgo-order-service-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>spring-micro-ftgo-restaurant-service-api</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>net.chrisrichardson.ftgo</groupId>-->
+            <!--<artifactId>spring-micro-ftgo-restaurant-service</artifactId>-->
+        <!--</dependency>-->
+
+
+        <!-- eventuate -->
+        <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-aggregate-domain-events</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-jdbc-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-commands</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.tram.sagas</groupId>
+            <artifactId>eventuate-tram-sagas-simple-dsl</artifactId>
+        </dependency>
+
+        <!-- spring boot-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- grpc -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>${grpc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>${grpc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>${grpc.version}</version>
+        </dependency>
+
+        <!-- 监控指标 -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+        <!-- 微服务-->
+        <!--<dependency>-->
+            <!--<groupId>io.microservices.tools.canvas</groupId>-->
+            <!--<artifactId>microservice-canvas-springmvc</artifactId>-->
+            <!--<version>${microservice.canvas.version}</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>io.microservices.tools.canvas</groupId>-->
+            <!--<artifactId>microservice-canvas-extractor-tram-sagas</artifactId>-->
+            <!--<version>${microservice.canvas.version}</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

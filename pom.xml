@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.chrisrichardson.ftgo</groupId>
+    <artifactId>spring-micro-ftgo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>spring-micro-ftgo-common</module>
+        <module>spring-micro-ftgo-order-service</module>
+        <module>spring-micro-common-swagger</module>
+        <module>spring-micro-ftgo-order-service-api</module>
+        <module>spring-micro-ftgo-restaurant-service</module>
+        <module>spring-micro-ftgo-restaurant-service-api</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Dalston.SR2</spring-cloud.version>
+
+        <eventuate.tram.version>0.21.0.RELEASE</eventuate.tram.version>
+        <eventuate.tram.sagas.version>0.11.1.RELEASE</eventuate.tram.sagas.version>
+        <micrometer.version>1.0.4</micrometer.version>
+        <microservice.canvas.version>0.1.1.RELEASE</microservice.canvas.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ftgo -->
+            <dependency>
+                <groupId>net.chrisrichardson.ftgo</groupId>
+                <artifactId>spring-micro-ftgo-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.chrisrichardson.ftgo</groupId>
+                <artifactId>spring-micro-ftgo-order-service-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.chrisrichardson.ftgo</groupId>
+                <artifactId>spring-micro-ftgo-restaurant-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.chrisrichardson.ftgo</groupId>
+                <artifactId>spring-micro-ftgo-restaurant-service-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+
+            <!-- eventuate -->
+            <dependency>
+                <groupId>io.eventuate.tram.core</groupId>
+                <artifactId>eventuate-tram-aggregate-domain-events</artifactId>
+                <version>${eventuate.tram.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.eventuate.tram.core</groupId>
+                <artifactId>eventuate-tram-jdbc-kafka</artifactId>
+                <version>${eventuate.tram.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.eventuate.tram.core</groupId>
+                <artifactId>eventuate-tram-commands</artifactId>
+                <version>${eventuate.tram.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.tram.core</groupId>
+                <artifactId>eventuate-tram-events</artifactId>
+                <version>${eventuate.tram.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.tram.sagas</groupId>
+                <artifactId>eventuate-tram-sagas-simple-dsl</artifactId>
+                <version>${eventuate.tram.sagas.version}</version>
+            </dependency>
+
+            <!-- 监控指标 -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer.version}</version>
+            </dependency>
+
+            <!-- el -->
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>2.2.5</version>
+            </dependency>
+
+
+
+            <!-- Spring Cloud -->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.cloud</groupId>-->
+                <!--<artifactId>spring-cloud-dependencies</artifactId>-->
+                <!--<version>${spring-cloud.version}</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -14,7 +14,7 @@
     <properties>
         <eventuate.tram.version>0.21.0.RELEASE</eventuate.tram.version>
         <eventuate.tram.sagas.version>0.11.1.RELEASE</eventuate.tram.sagas.version>
-        <grpc.version>1.13.2</grpc.version>
+        <grpc.version>1.53.0</grpc.version>
         <micrometer.version>1.0.4</micrometer.version>
         <microservice.canvas.version>0.1.1.RELEASE</microservice.canvas.version>
     </properties>
